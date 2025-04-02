@@ -1,6 +1,6 @@
 resource "aws_instance" "nginx_instance_prod" {
   ami                    = "ami-0ecf75a98fe8519d7" # Amazon Linux 2023 AMI
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   key_name               = "dardelean"
   user_data              = filebase64("user_data.sh")
   iam_instance_profile   = aws_iam_instance_profile.dan_ec2_instance_profile.name
@@ -12,7 +12,7 @@ resource "aws_instance" "nginx_instance_prod" {
 
 resource "aws_instance" "nginx_instance_dev" {
   ami                    = "ami-0ecf75a98fe8519d7" # Amazon Linux 2023 AMI, eu-west-3
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   key_name               = "dardelean"
   user_data              = filebase64("user_data.sh")
   iam_instance_profile   = aws_iam_instance_profile.dan_ec2_instance_profile.name

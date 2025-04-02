@@ -147,24 +147,24 @@ data "aws_iam_policy_document" "codepipeline_policy" {
     resources = ["*"]
   }
 
-  statement {
-    # Allow CodeCommit (only if we use CodeCommit instead of GitHub)
-    effect = "Allow"
-    actions = [
-      "codecommit:GetBranch",
-      "codecommit:GetCommit",
-      "codecommit:GetUploadArchiveStatus",
-      "codecommit:GetRepository",
-      "codecommit:CancelUploadArchive",
-      "codecommit:ListBranches",
-      "codecommit:ListRepositories",
-      "codecommit:UploadArchive",
-      "codecommit:GitPull",
-      "codecommit:GitPush"
-    ]
+#   statement {
+#     # Allow CodeCommit (only if we use CodeCommit instead of GitHub)
+#     effect = "Allow"
+#     actions = [
+#       "codecommit:GetBranch",
+#       "codecommit:GetCommit",
+#       "codecommit:GetUploadArchiveStatus",
+#       "codecommit:GetRepository",
+#       "codecommit:CancelUploadArchive",
+#       "codecommit:ListBranches",
+#       "codecommit:ListRepositories",
+#       "codecommit:UploadArchive",
+#       "codecommit:GitPull",
+#       "codecommit:GitPush"
+#     ]
 
-    resources = ["${aws_codecommit_repository.my_repository.arn}"]
-  }
+#     resources = ["${aws_codecommit_repository.my_repository.arn}"]
+#   }
 }
 
 resource "aws_iam_role_policy" "codepipeline_policy" {

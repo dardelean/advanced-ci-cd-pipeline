@@ -23,8 +23,8 @@ resource "aws_iam_role_policy_attachment" "AmazonEC2RoleforAWSCodeDeploy" {
   role       = aws_iam_role.ec2_role_2024.name
 }
 
-resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "ec2_instance_profile"
+resource "aws_iam_instance_profile" "dan_ec2_instance_profile" {
+  name = "dan_ec2_instance_profile"
   role = aws_iam_role.ec2_role_2024.name
 }
 

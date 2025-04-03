@@ -147,6 +147,23 @@ data "aws_iam_policy_document" "codepipeline_policy" {
     resources = ["*"]
   }
 
+  statement {
+    effect = "Allow"
+
+    resources = [
+      "*"
+    ]
+
+    actions = [
+      "codeconnections:GetConnectionToken",
+      "codeconnections:GetConnection",
+      "codeconnections:UseConnection",
+      "codestar-connections:GetConnectionToken",
+      "codestar-connections:GetConnection",
+      "codestar-connections:UseConnection"
+    ]
+  }
+
   #   statement {
   #     # Allow CodeCommit (only if we use CodeCommit instead of GitHub)
   #     effect = "Allow"
